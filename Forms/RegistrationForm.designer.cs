@@ -85,6 +85,7 @@
             this.btn_close.TabIndex = 2;
             this.btn_close.Text = "X";
             this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // label2
             // 
@@ -394,6 +395,7 @@
             this.btn_save_client.TabIndex = 32;
             this.btn_save_client.Text = "Сохранить";
             this.btn_save_client.UseVisualStyleBackColor = false;
+            this.btn_save_client.Click += new System.EventHandler(this.btn_save_client_Click);
             // 
             // btn_clear_registrationForm
             // 
@@ -407,6 +409,7 @@
             this.btn_clear_registrationForm.TabIndex = 33;
             this.btn_clear_registrationForm.Text = "Очистить";
             this.btn_clear_registrationForm.UseVisualStyleBackColor = false;
+            this.btn_clear_registrationForm.Click += new System.EventHandler(this.btn_clear_registrationForm_Click);
             // 
             // panel1
             // 
@@ -457,6 +460,7 @@
             this.chB_generatePassword.TabIndex = 34;
             this.chB_generatePassword.Text = "сгенерировать пароль";
             this.chB_generatePassword.UseVisualStyleBackColor = true;
+            this.chB_generatePassword.Visible = false;
             // 
             // RegistrationForm
             // 
@@ -468,6 +472,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegistrationForm";
             this.Text = "RegistrationForm";
+            this.Load += new System.EventHandler(this.RegistrationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

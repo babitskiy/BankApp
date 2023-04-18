@@ -1,4 +1,4 @@
-﻿namespace BankApp
+﻿namespace BankApp.Forms
 {
     partial class LoginForm
     {
@@ -56,6 +56,7 @@
             this.btn_closeLoginForm.TabIndex = 0;
             this.btn_closeLoginForm.Text = "X";
             this.btn_closeLoginForm.UseVisualStyleBackColor = false;
+            this.btn_closeLoginForm.Click += new System.EventHandler(this.btn_closeLoginForm_Click);
             // 
             // label1
             // 
@@ -147,6 +148,7 @@
             this.chB_visibilityPassword.TabIndex = 8;
             this.chB_visibilityPassword.Text = "показать пароль";
             this.chB_visibilityPassword.UseVisualStyleBackColor = true;
+            this.chB_visibilityPassword.CheckedChanged += new System.EventHandler(this.chB_visibilityPassword_CheckedChanged);
             // 
             // btn_EnterLoginForm
             // 
@@ -160,6 +162,7 @@
             this.btn_EnterLoginForm.TabIndex = 9;
             this.btn_EnterLoginForm.Text = "Войти";
             this.btn_EnterLoginForm.UseVisualStyleBackColor = false;
+            this.btn_EnterLoginForm.Click += new System.EventHandler(this.btn_EnterLoginForm_Click);
             // 
             // label4
             // 
@@ -204,6 +207,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(404, 355);
             this.panel1.TabIndex = 12;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // LoginForm
             // 
