@@ -46,7 +46,9 @@ namespace BankApp.Forms
 
         private void selectBankCard()
         {
-
+            lbL_card_number.Text = "";
+            string paymentSystem = "";
+            string querySelectCard = $"SELECT bank_card_number, bank_card_cvv_code, CONCAT(FORMAT(bank_card_date, '%M'), '/', FORMAT(bank_card_date, '%y')), bank_card_paymentSystem, bank_card_balance, bank_card_currency from bank_card where bank_card_number = '{cmb_card.GetItemText(cmb_card.SelectedItem)}'";
         }
     }
 }
