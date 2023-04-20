@@ -235,6 +235,7 @@
             this.btn_adding_card.TabIndex = 10;
             this.btn_adding_card.Text = "Добавить";
             this.btn_adding_card.UseVisualStyleBackColor = false;
+            this.btn_adding_card.Click += new System.EventHandler(this.btn_adding_card_Click);
             // 
             // label4
             // 
@@ -813,6 +814,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lbL_HistoryTransactions)).EndInit();

@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Classes\DataBaseConnection.cs" />
     <Compile Include="Classes\DataStorage.cs" />
+    <Compile Include="Forms\AddBankCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddBankCard.designer.cs">
+      <DependentUpon>AddBankCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddBankCard.resx">
+      <DependentUpon>AddBankCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
