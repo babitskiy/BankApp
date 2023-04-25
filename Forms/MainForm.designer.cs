@@ -344,6 +344,7 @@
             this.lbL_cardCvv.Size = new System.Drawing.Size(20, 10);
             this.lbL_cardCvv.TabIndex = 28;
             this.lbL_cardCvv.Text = "CVV";
+            this.lbL_cardCvv.Click += new System.EventHandler(this.lbL_cardCvv_Click);
             // 
             // label8
             // 
@@ -406,6 +407,7 @@
             this.btn_MoneyTransferCard.TabIndex = 7;
             this.btn_MoneyTransferCard.Text = ">";
             this.btn_MoneyTransferCard.UseVisualStyleBackColor = false;
+            this.btn_MoneyTransferCard.Click += new System.EventHandler(this.btn_MoneyTransferCard_Click);
             // 
             // txB_NumberTransferCardMoney
             // 
@@ -696,6 +698,7 @@
             this.btn_udpate.Size = new System.Drawing.Size(43, 41);
             this.btn_udpate.TabIndex = 7;
             this.btn_udpate.UseVisualStyleBackColor = false;
+            this.btn_udpate.Click += new System.EventHandler(this.btn_udpate_Click);
             // 
             // picB_masterCard
             // 

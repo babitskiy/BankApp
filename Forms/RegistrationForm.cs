@@ -109,7 +109,7 @@ namespace BankApp.Forms
 
                 mySQL += "INSERT INTO client (client_last_name, client_first_name, client_middle_name, client_gender, client_password, client_email, client_phone_number) ";
                 mySQL += "VALUES ('" + txB_client_last_name.Text + "','" + txB_client_first_name.Text + "','" + txB_client_middle_name.Text + "',";
-                mySQL += "'" + cmb_client_gender.SelectedItem.ToString() + "','" + txB_client_password.Text + "','" + txb_client_email.Text + "','" + txB_client_phone_number + "')";
+                mySQL += "'" + cmb_client_gender.SelectedItem.ToString() + "','" + txB_client_password.Text + "','" + txb_client_email.Text + "','" + txB_client_phone_number.Text + "')";
 
                 database.openConnection();
                 SqlCommand commandAddNewUser = new SqlCommand(mySQL, database.getConnection());

@@ -1,4 +1,6 @@
 ﻿using BankApp.Classes;
+using MobileBank.Forms;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -49,6 +51,76 @@ namespace BankApp.Forms
             lbL_card_number.Text = "";
             string paymentSystem = "";
             string querySelectCard = $"SELECT bank_card_number, bank_card_cvv_code, CONCAT(FORMAT(bank_card_date, '%M'), '/', FORMAT(bank_card_date, '%y')), bank_card_paymentSystem, bank_card_balance, bank_card_currency from bank_card where bank_card_number = '{cmb_card.GetItemText(cmb_card.SelectedItem)}'";
+            SqlCommand command = new SqlCommand(querySelectCard, database.getConnection());
+            database.openConnection();
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                var cardNumber = reader[0].ToString();
+
+                int tmp = 0;
+                int tmp1 = 4;
+                for (int m = 0; m < 4; m++)
+                {
+                    for (int n = tmp; n < tmp1; n++)
+                    {
+                        lbL_card_number.Text += cardNumber[n].ToString();
+                    }
+                    lbL_card_number.Text += " ";
+                    tmp += 4;
+                    tmp1 += 4;
+                }
+
+                lbL_cardCvv.Text = reader[1].ToString();
+                lbL_cardDate.Text = reader[2].ToString();
+                paymentSystem = reader[3].ToString();
+                lbL_balanceCard.Text = Math.Round(Convert.ToDouble(reader[4]), 2).ToString();
+                lbl_currency.Text = reader[5].ToString();
+                DataStorage.cardCVV = lbL_cardCvv.Text;
+                lbL_cardCvv.Text = "***";
+            }
+            reader.Close();
+
+            if (paymentSystem == "Visa")
+            {
+                picB_visa.Visible = true;
+                picB_masterCard.Visible = false;
+            }
+            else
+            {
+                picB_visa.Visible = false;
+                picB_masterCard.Visible = true;
+            }
+        }
+
+        private void btn_udpate_Click(object sender, EventArgs e)
+        {
+            var queryMyCards = $"select id_bank_card, bank_card_number from bank_card where id_client = '{DataStorage.idClient}'";
+            SqlDataAdapter commandMyCards = new SqlDataAdapter(queryMyCards, database.getConnection());
+            database.openConnection();
+            DataTable cards = new DataTable();
+            commandMyCards.Fill(cards);
+            cmb_card.DataSource = cards;
+            cmb_card.ValueMember = "id_bank_card";
+            cmb_card.DisplayMember = "bank_card_number";
+            database.closeConnection();
+
+            selectBankCard();
+        }
+
+        private void lbL_cardCvv_Click(object sender, EventArgs e)
+        {
+            if (lbL_cardCvv.Text == "***")
+            {
+                lbL_cardCvv.Text = DataStorage.cardCVV;
+            }
+            else
+                lbL_cardCvv.Text = "***";
+        }
+
+        private void btn_MoneyTransferCard_Click(object sender, EventArgs e)
+        {
+            MoneyTransferCardForm moneyTransferCardForm = new MoneyTransferCardForm();
         }
     }
 }

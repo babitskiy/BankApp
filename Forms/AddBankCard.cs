@@ -8,9 +8,8 @@ namespace BankApp.Forms
 {
     public partial class AddBankCard : Form
     {
-        Random rand = new Random();
-
         DataBaseConnection database = new DataBaseConnection();
+        Random rand = new Random();
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -19,7 +18,9 @@ namespace BankApp.Forms
         public const int HT_CAPTION = 0x2;
 
         [System.Runtime.InteropServices.DllImport("user32.dll")]
+
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int IParam);
+
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
