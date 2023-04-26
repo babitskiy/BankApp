@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
 
-namespace MobileBank.Forms
+namespace BankApp.Forms
 {
     public partial class MoneyTransferCardForm : Form
     {
@@ -118,6 +118,77 @@ namespace MobileBank.Forms
             {
                 MessageBox.Show("Ошибка. Недостаточно средств для совершения операции", "Отмена", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 error = true;
+            }
+
+            if (error == false)
+            {
+                DataStorage.bankCard = txB_card_numberUser.Text;
+                Validations validation = new Validations();
+                validation.ShowDialog();
+
+                if (DataStorage.attempts > 0)
+                {
+                    DateTime transactionDate = DateTime.Now;
+                    var transactionNumber = "P";
+                    for (int i = 0; i < 10; i++)
+                    {
+                        transactionNumber += Convert.ToString(rand.Next(0, 10));
+                    }
+                    var queryTransaction1 = $"";
+                    var queryTransaction2 = $"";
+
+                    if (cardCurrency == "UAH" && cardCurrency2 == "USD")
+                    {
+                        queryTransaction1 = $"update bank_card set banc_card_balance = bank_card_balance - '{sum}' where bank_card_number = '{cardNumber}'";
+                        queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum /= dolar}' where bank_card_number = '{destinationCard}'";
+                    }
+                    else if (cardCurrency == "UAH" && cardCurrency2 == "EUR")
+                    {
+                        queryTransaction1 = $"update bank_card set banc_card_balance = bank_card_balance - '{sum}' where bank_card_number = '{cardNumber}'";
+                        queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum /= euro}' where bank_card_number = '{destinationCard}'";
+                    }
+                    else if (cardCurrency == "USD" && cardCurrency2 == "UAH")
+                    {
+                        queryTransaction1 = $"update bank_card set banc_card_balance = bank_card_balance - '{sum}' where bank_card_number = '{cardNumber}'";
+                        queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum *= dolar}' where bank_card_number = '{destinationCard}'";
+                    }
+                    else if (cardCurrency == "USD" && cardCurrency2 == "EUR")
+                    {
+                        queryTransaction1 = $"update bank_card set banc_card_balance = bank_card_balance - '{sum}' where bank_card_number = '{cardNumber}'";
+                        queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum *= 0.96}' where bank_card_number = '{destinationCard}'";
+                    }
+                    else if (cardCurrency == "EUR" && cardCurrency2 == "UAH")
+                    {
+                        queryTransaction1 = $"update bank_card set banc_card_balance = bank_card_balance - '{sum}' where bank_card_number = '{cardNumber}'";
+                        queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum *= euro}' where bank_card_number = '{destinationCard}'";
+                    }
+                    else
+                    {
+                        queryTransaction1 = $"update bank_card set banc_card_balance = bank_card_balance - '{sum * 1.04}' where bank_card_number = '{cardNumber}'";
+                        queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum}' where bank_card_number = '{destinationCard}'";
+                    }
+
+                    var queryTransaction3 = $"insert into transactions(transaction_type, transaction_destination, transaction_date, transaction_number, transaction_value,";
+                    var command1 = new SqlCommand(queryTransaction1, database.getConnection());
+                    var command2 = new SqlCommand(queryTransaction2, database.getConnection());
+                    var command3 = new SqlCommand(queryTransaction3, database.getConnection());
+                    database.openConnection();
+                    command1.ExecuteNonQuery();
+                    command2.ExecuteNonQuery();
+                    command3.ExecuteNonQuery();
+                    database.closeConnection();
+
+                    Close();
+                }
+            }
+        }
+
+        private void MoneyTransferCardForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
     }

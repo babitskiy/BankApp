@@ -1,4 +1,4 @@
-﻿namespace MobileBank.Forms
+﻿namespace BankApp.Forms
 {
     partial class MoneyTransferCardForm
     {
@@ -338,6 +338,7 @@
             this.Name = "MoneyTransferCardForm";
             this.Text = "MoneyTransferCardForm";
             this.Load += new System.EventHandler(this.MoneyTransferCardForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MoneyTransferCardForm_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
