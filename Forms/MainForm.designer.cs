@@ -153,6 +153,7 @@
             this.picB_user.Size = new System.Drawing.Size(32, 35);
             this.picB_user.TabIndex = 33;
             this.picB_user.TabStop = false;
+            this.picB_user.Click += new System.EventHandler(this.picB_user_Click);
             // 
             // lbL_сourse_dollar
             // 

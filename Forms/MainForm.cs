@@ -121,5 +121,11 @@ namespace BankApp.Forms
         {
             MoneyTransferCardForm moneyTransferCardForm = new MoneyTransferCardForm();
         }
+
+        private void picB_user_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm();
+            userForm.Show();
+        }
     }
 }
