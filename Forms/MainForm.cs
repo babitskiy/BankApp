@@ -127,5 +127,11 @@ namespace BankApp.Forms
             UserForm userForm = new UserForm();
             userForm.Show();
         }
+
+        private void lbL_HistoryTransactions_Click(object sender, EventArgs e)
+        {
+            HistoryTransactions historyTransactions = new HistoryTransactions();
+            historyTransactions.Show();
+        }
     }
 }

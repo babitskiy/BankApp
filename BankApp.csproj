@@ -72,6 +72,12 @@
     <Compile Include="Forms\ChangePhoneNumber.designer.cs">
       <DependentUpon>ChangePhoneNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HistoryTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistoryTransactions.designer.cs">
+      <DependentUpon>HistoryTransactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangePhoneNumber.resx">
       <DependentUpon>ChangePhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryTransactions.resx">
+      <DependentUpon>HistoryTransactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

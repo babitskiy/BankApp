@@ -144,6 +144,7 @@
             this.lbL_HistoryTransactions.Size = new System.Drawing.Size(32, 32);
             this.lbL_HistoryTransactions.TabIndex = 34;
             this.lbL_HistoryTransactions.TabStop = false;
+            this.lbL_HistoryTransactions.Click += new System.EventHandler(this.lbL_HistoryTransactions_Click);
             // 
             // picB_user
             // 
