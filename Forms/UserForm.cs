@@ -40,7 +40,8 @@ namespace BankApp.Forms
 
         void Btn_update_Click(object sender, EventArgs e)
         {
-
+            ClearFields();
+            RefreshData();
         }
 
         void ClearControl()
@@ -115,17 +116,20 @@ namespace BankApp.Forms
 
         void Btn_ChangeNumberPhone_Click(object sender, EventArgs e)
         {
-
+            ChangePhoneNumber changePhoneNumber = new ChangePhoneNumber();
+            changePhoneNumber.Show();
         }
 
         void Btn_ChangePasswordAccount_Click(object sender, EventArgs e)
         {
-
+            ChangePasswordUserAccount changePasswordUserAccount = new ChangePasswordUserAccount();
+            changePasswordUserAccount.Show();
         }
 
         void Btn_ChangeEmail_Click(object sender, EventArgs e)
         {
-
+            ChangeEmail changeEmail = new ChangeEmail();
+            changeEmail.Show();
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)

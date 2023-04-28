@@ -54,6 +54,24 @@
     <Compile Include="Forms\AddBankCard.designer.cs">
       <DependentUpon>AddBankCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChangeEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeEmail.designer.cs">
+      <DependentUpon>ChangeEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordUserAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePasswordUserAccount.designer.cs">
+      <DependentUpon>ChangePasswordUserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChangePhoneNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangePhoneNumber.designer.cs">
+      <DependentUpon>ChangePhoneNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +112,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddBankCard.resx">
       <DependentUpon>AddBankCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangeEmail.resx">
+      <DependentUpon>ChangeEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePasswordUserAccount.resx">
+      <DependentUpon>ChangePasswordUserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChangePhoneNumber.resx">
+      <DependentUpon>ChangePhoneNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
