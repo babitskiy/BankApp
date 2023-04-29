@@ -617,6 +617,7 @@
             this.btn_internetTV.TabIndex = 7;
             this.btn_internetTV.Text = ">";
             this.btn_internetTV.UseVisualStyleBackColor = false;
+            this.btn_internetTV.Click += new System.EventHandler(this.btn_internetTV_Click);
             // 
             // label13
             // 
