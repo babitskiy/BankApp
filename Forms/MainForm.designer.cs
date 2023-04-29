@@ -496,6 +496,7 @@
             this.btn_transferMobilePhone.TabIndex = 7;
             this.btn_transferMobilePhone.Text = ">";
             this.btn_transferMobilePhone.UseVisualStyleBackColor = false;
+            this.btn_transferMobilePhone.Click += new System.EventHandler(this.btn_transferMobilePhone_Click);
             // 
             // txB_transferMobilePhone
             // 
@@ -567,6 +568,7 @@
             this.btn_communalPayments.TabIndex = 7;
             this.btn_communalPayments.Text = ">";
             this.btn_communalPayments.UseVisualStyleBackColor = false;
+            this.btn_communalPayments.Click += new System.EventHandler(this.btn_communalPayments_Click);
             // 
             // label14
             // 

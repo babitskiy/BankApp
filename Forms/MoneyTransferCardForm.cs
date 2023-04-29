@@ -168,7 +168,7 @@ namespace BankApp.Forms
                         queryTransaction2 = $"update bank_card set banc_card_balance = bank_card_balance + '{sum}' where bank_card_number = '{destinationCard}'";
                     }
 
-                    var queryTransaction3 = $"insert into transactions(transaction_type, transaction_destination, transaction_date, transaction_number, transaction_value,";
+                    var queryTransaction3 = $"insert into transactions(transaction_type, transaction_destination, transaction_date, transaction_number, transaction_value, id_bank_card) values('Перевод', '{destinationCard}', '{transactionDate}', '{transactionNumber}', '{sum}, (select id_bank_card from bank_card where bank_card_number = '{cardNumber}'))";
                     var command1 = new SqlCommand(queryTransaction1, database.getConnection());
                     var command2 = new SqlCommand(queryTransaction2, database.getConnection());
                     var command3 = new SqlCommand(queryTransaction3, database.getConnection());

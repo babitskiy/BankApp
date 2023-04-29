@@ -133,5 +133,19 @@ namespace BankApp.Forms
             HistoryTransactions historyTransactions = new HistoryTransactions();
             historyTransactions.Show();
         }
+
+        private void btn_transferMobilePhone_Click(object sender, EventArgs e)
+        {
+            MobilePhoneTransferForm mobilePhoneTransferForm = new MobilePhoneTransferForm();
+            DataStorage.cardNumber = cmb_card.GetItemText(cmb_card.SelectedItem);
+            DataStorage.phoneNumber = txB_transferMobilePhone.Text;
+            txB_transferMobilePhone.Text = "";
+            mobilePhoneTransferForm.Show();
+        }
+
+        private void btn_communalPayments_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
