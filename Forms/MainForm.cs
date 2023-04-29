@@ -145,7 +145,9 @@ namespace BankApp.Forms
 
         private void btn_communalPayments_Click(object sender, EventArgs e)
         {
-
+            CommunalPayments communalPayments = new CommunalPayments();
+            DataStorage.cardNumber = cmb_card.GetItemText(cmb_card.SelectedItem);
+            communalPayments.Show();
         }
     }
 }
