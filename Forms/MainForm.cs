@@ -156,5 +156,12 @@ namespace BankApp.Forms
             DataStorage.cardNumber = cmb_card.GetItemText(cmb_card.SelectedItem);
             internetTVPayments.Show();
         }
+
+        private void btn_Children_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            DataStorage.cardNumber = cmb_card.GetItemText(cmb_card.SelectedItem);
+            helpForm.Show();
+        }
     }
 }

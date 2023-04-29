@@ -666,6 +666,7 @@
             this.btn_Children.TabIndex = 7;
             this.btn_Children.Text = ">";
             this.btn_Children.UseVisualStyleBackColor = false;
+            this.btn_Children.Click += new System.EventHandler(this.btn_Children_Click);
             // 
             // label15
             // 
