@@ -70,3 +70,16 @@ alter table clientPersonalAccount add foreign key (id_service) references dbo.cl
 
 alter table clientPersonalAccount add id_bank_card int
 alter table clientPersonalAccount add foreign key (id_client) references dbo.Client(id_client) on delete no action on update cascade
+
+insert into clientServices values 
+	("MTS", 0, "Mobile"),
+	("Megafon", 0, "Mobile"),
+	("Beeline", 0, "Mobile"),
+	("Tele2", 0, "Mobile"),	
+	("CityLink", 0, "Internet"),	
+	("NevaLink", 0, "Internet"),	
+	("Sampo", 0, "Internet"),	
+	("Газ", 0, "communal"),	
+	("Вода", 0, "communal"),	
+	("Свет", 0, "communal"),	
+	("Благотворительность", 0, "charity")
