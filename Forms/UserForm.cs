@@ -1,8 +1,6 @@
 ﻿using BankApp.Classes;
 using System;
 using System.Data.SqlClient;
-using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace BankApp.Forms

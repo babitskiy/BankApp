@@ -765,6 +765,7 @@
             this.btn_credit.TabIndex = 7;
             this.btn_credit.Text = ">";
             this.btn_credit.UseVisualStyleBackColor = false;
+            this.btn_credit.Click += new System.EventHandler(this.btn_credit_Click);
             // 
             // label16
             // 

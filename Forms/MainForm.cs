@@ -163,5 +163,27 @@ namespace BankApp.Forms
             DataStorage.cardNumber = cmb_card.GetItemText(cmb_card.SelectedItem);
             helpForm.Show();
         }
+
+        private void btn_credit_Click(object sender, EventArgs e)
+        {
+            DataStorage.cardNumber = cmb_card.GetItemText(cmb_card.SelectedItem);
+            var cardCurrency = "";
+            var queryCheckCurrency = $"select bank_card_currency from bank_card where bank_card_number = '{DataStorage.cardNumber}'";
+            SqlCommand commandCheckCurrency = new SqlCommand(queryCheckCurrency, database.getConnection());
+            SqlDataReader reader = commandCheckCurrency.ExecuteReader();
+            while (reader.Read())
+            {
+                cardCurrency = reader[0].ToString();
+            }
+            reader.Close();
+
+            if (cardCurrency == "RUB")
+            {
+                CreditForm creditForm = new CreditForm();
+                creditForm.Show();
+            }
+            else
+                MessageBox.Show("Операции с кредитом могут производиться только в рублях!", "Отказ", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+        }
     }
 }
